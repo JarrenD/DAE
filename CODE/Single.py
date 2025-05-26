@@ -27,8 +27,11 @@ Weight_test = Weight[375:]  # used for testing, compared with Target_test
 model = LinearRegression()
 model.fit(Weight_train,Target_train)
 
+prediction_train_weight = model.predict(Weight_train)
 prediction_Weight = model.predict(Weight_test)                # model predicts data using unseen weight
 R2_value_weight = r2_score(Target_test,prediction_Weight)     # R2 value
+R2_train_weight = r2_score(Target_train, prediction_train_weight)
+print("R² on training set for Weight:", R2_train_weight)
 print("R² on test set for Weight:", R2_value_weight)
 
 plt.scatter(Weight_test, Target_test, color='blue', label='Actual')
@@ -49,8 +52,11 @@ Age_test = Age[375:]  # used for testing, compared with Target_test
 model = LinearRegression()
 model.fit(Age_train,Target_train)
 
+prediction_train_age = model.predict(Age_train)
 prediction_Age = model.predict(Age_test)                    # model predicts data using unseen age
 R2_value_Age = r2_score(Target_test,prediction_Age)         # R2 value
+R2_train_age = r2_score(Target_train, prediction_train_age)
+print("R² on training set for Age:", R2_train_age)
 print("R² on test set for Age:", R2_value_Age)
 
 plt.scatter(Age_test, Target_test, color='blue', label='Actual')
@@ -71,8 +77,11 @@ DSI_test = DSI[375:]  # used for testing, compared with Target_test
 model = LinearRegression()
 model.fit(DSI_train,Target_train)
 
+prediction_train_dsi = model.predict(DSI_train)
 prediction_DSI = model.predict(DSI_test)                    # model predicts data using unseen dsi
 R2_value_DSI = r2_score(Target_test,prediction_DSI)         # R2 value
+R2_train_dsi = r2_score(Target_train, prediction_train_dsi)
+print("R² on training set for DSI:", R2_train_dsi)
 print("R² on test set for DSI:", R2_value_DSI)
 
 plt.scatter(DSI_test, Target_test, color='blue', label='Actual')
@@ -93,8 +102,11 @@ SUS_test = SUS_features[375:]  # used for testing, compared with Target_test
 model = LinearRegression()
 model.fit(SUS_train,Target_train)
 
+prediction_train_sus = model.predict(SUS_train)
 prediction_SUS = model.predict(SUS_test)                    # model predicts data using unseen species data
 R2_value_SUS = r2_score(Target_test,prediction_SUS)         # R2 value
+R2_train_sus = r2_score(Target_train, prediction_train_age)
+print("R² on training set for Species:", R2_train_sus)
 print("R² on test set for Species:", R2_value_SUS)
 
 # More of averaged data
